@@ -8,6 +8,6 @@
     IndexController.$inject = ['$scope'];
 
     function IndexController($scope) {
-        $scope.Title = '#WeWantTrubel';
+        $scope.Title = 'We Want Trubel';
     }
 })();
