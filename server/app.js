@@ -1,5 +1,6 @@
-var express = require('express');
-var fs = require('fs');
+var express = require('express'),
+	fs = require('fs'),
+	petitioners = require('./api/petitioners.js');
 var app = express();
 
 if (process.env.RunningOnIISNode == "True") {
@@ -18,6 +19,10 @@ else {
 
 	app.use('/', express.static('../client'));
 }
+
+// Petitioners API
+app.get('/api/petitioners', petitioners.GetAll);
+app.post('/api/petitioners', petitioners.Post);
 
 app.use(function (err, req, res, next) {
 	console.error(err.stack);

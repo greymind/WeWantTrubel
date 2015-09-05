@@ -3,3 +3,4 @@ bower_components/
 typings/
 client/lib/
 **/.vagrant/
+server/api/config.json
