@@ -25,7 +25,7 @@ var Allowed = function (req, res) {
 }
 
 module.exports.GetAll = function (req, res) {
-	if (!Allowed(req)) {
+	if (!Allowed(req, res)) {
 		res.end(403, 'Forbidden');
 	};
 
