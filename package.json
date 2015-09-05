@@ -35,6 +35,7 @@
     "tsd": "^0.6.4"
   },
   "scripts": {
+    "postinstall": "gulp Build",
     "start": "cd ./server/ && nodemon -w . ./app.js"
   },
   "keywords": [
