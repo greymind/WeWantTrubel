@@ -1,7 +1,7 @@
 {
   "name": "we-want-trubel",
   "version": "0.1.0",
-  "description": "WeWantTrubel project",
+  "description": "WeWantTrubel.com - A fan site to petition for the reinstatement of Trubel to Grimm! #WeWantTrubel",
   "private": true,
   "dependencies": {},
   "devDependencies": {
@@ -28,6 +28,19 @@
     "sprintf-js": "^1.0.3",
     "tsd": "^0.6.4"
   },
+  "author": {
+    "name": "Balakrishnan (Balki) Ranganathan",
+    "email": "balki@live.com",
+    "url": "http://greymind.com/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/greymind/WeWantTrubel.git"
+  },
+  "bugs": {
+    "url": "https://github.com/greymind/WeWantTrubel/issues"
+  },
+  "homepage": "https://github.com/greymind/WeWantTrubel#readme",
   "scripts": {
     "start": "http-server"
   },
