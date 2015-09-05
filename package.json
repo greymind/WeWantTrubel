@@ -2,6 +2,7 @@
   "name": "we-want-trubel",
   "version": "0.1.0",
   "description": "WeWantTrubel project",
+  "main": "server/app.js",
   "private": true,
   "dependencies": {
     "express": "^4.13.3",
