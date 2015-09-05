@@ -26,11 +26,11 @@
     
     function ConfigFunction($routeProvider, $httpProvider, $locationProvider) {
         $routeProvider
-            .when('/post', {
-                templateUrl: 'app/post/post.html'
+            .when('/petition', {
+                templateUrl: 'app/petition/petition.html'
             })
             .otherwise({
-                redirectTo: '/post'
+                redirectTo: '/petition'
             });
 
         //$httpProvider.interceptors.push('Interceptor');
