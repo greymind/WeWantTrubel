@@ -21,7 +21,10 @@ var Allowed = function (req, res) {
 	//console.log(ip);
 	//return (ip === '');
 	
-	res.send(req);
+	console.log(req.hostname);
+	console.dir(req.ips);
+
+	return true;
 }
 
 module.exports.GetAll = function (req, res) {
@@ -33,7 +36,8 @@ module.exports.GetAll = function (req, res) {
 		assert.equal(err, null);
 
 		db.collection('WeWantTrubel-Petitioners')
-			.find()
+			.find({}, { "Name": 1, "Location": 1, "TimeStamp": 1 })
+			.sort({ "TimeStamp": -1 })
 			.toArray(function (err, docs) {
 				assert.equal(err, null);
 				res.send(docs);
