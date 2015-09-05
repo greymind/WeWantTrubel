@@ -3,12 +3,12 @@
 
     angular
         .module('WeWantTrubelControllers')
-        .controller('Home', HomeController);
+        .controller('Post', PostController);
 
-    HomeController.$inject = ['$scope']; 
+    PostController.$inject = ['$scope']; 
 
-    function HomeController($scope) {
-        $scope.Title = 'Home';
+    function PostController($scope) {
+        $scope.Title = 'Post';
 
         activate();
 
