@@ -18,6 +18,7 @@ gulp.task('Clean:Lib', function (cb) {
 gulp.task('Copy:Lib', ['Clean:Lib'], function (cb) {
     var bower = {
         "lodash": "lodash/lodash.js",
+        "moment": "moment/moment.js",
         "jquery": "jquery/dist/jquery*.{js,map}",
         "jquery-validation": "jquery-validation/dist/jquery.validate.js",
         "jquery-validation-unobtrusive": "jquery-validation-unobtrusive/jquery.validate.unobtrusive.js",
@@ -27,6 +28,7 @@ gulp.task('Copy:Lib', ['Clean:Lib'], function (cb) {
         "angular-mocks": "angular-mocks/angular-mocks.js",
         "angular-resource": "angular-resource/angular-resource*.{js,map}",
         "angular-route": "angular-route/angular-route*.{js,map}",
+        "sprintf": "sprintf/dist/angular-sprintf.min.js",
     };
 
     var bowerPaths = {};
@@ -40,7 +42,7 @@ gulp.task('Copy:Lib', ['Clean:Lib'], function (cb) {
     es.merge(lodash.map(bower, function (moduleFiles, bowerModule) {
         return gulp.src(paths.Bower + moduleFiles)
             .pipe(gulp.dest(paths.Lib + bowerModule))
-            .pipe(gulpFilter(['**/*.js', '!**/*.min.js', '!**/npm.js']))
+            .pipe(gulpFilter(['**/*.js', '!**/npm.js']))
             .pipe(es.map(function (file, cb) {
                 var filepath = path.relative(path.resolve(paths.Home), file.path)
                     .split(path.sep)

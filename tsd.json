@@ -25,6 +25,15 @@
     },
     "nconf/nconf.d.ts": {
       "commit": "d9fea91e842c2cf5bd0f7d861ac378e571d2ad7c"
+    },
+    "orchestrator/orchestrator.d.ts": {
+      "commit": "d9fea91e842c2cf5bd0f7d861ac378e571d2ad7c"
+    },
+    "gulp/gulp.d.ts": {
+      "commit": "d9fea91e842c2cf5bd0f7d861ac378e571d2ad7c"
+    },
+    "q/Q.d.ts": {
+      "commit": "d9fea91e842c2cf5bd0f7d861ac378e571d2ad7c"
     }
   }
 }

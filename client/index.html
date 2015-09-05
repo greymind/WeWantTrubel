@@ -21,27 +21,43 @@
 
     <div class="container body-container" ng-view=""></div>
 
-    <div class="container" ng-controller="Petitioners"></div>
+    <div class="petitioners">
+        <div class="petitioners-block" ng-repeat="petitioner in Petitioners">
+            <div class="petitioners-name">
+                <div>{{petitioner.Name}}</div>
+                <div class="petitioners-location">{{petitioner.Location}}</div>
+            </div>
+            <div class="petitioners-slot">#{{Petitioners.length - $index}}</div>
+            <div class="petitioners-timestamp">{{FormatTimeStamp(petitioner.TimeStamp)}}</div>
+        </div>
+    </div>
 
     <div id="data-copy-lib">
         <script src="/client/lib/lodash/lodash.js"></script>
+        <script src="/client/lib/moment/moment.js"></script>
         <script src="/client/lib/jquery/jquery.js"></script>
+        <script src="/client/lib/jquery/jquery.min.js"></script>
         <script src="/client/lib/jquery-validation/jquery.validate.js"></script>
         <script src="/client/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
         <script src="/client/lib/bootstrap/js/bootstrap.js"></script>
+        <script src="/client/lib/bootstrap/js/bootstrap.min.js"></script>
         <script src="/client/lib/hammer.js/hammer.js"></script>
+        <script src="/client/lib/hammer.js/hammer.min.js"></script>
         <script src="/client/lib/angular/angular.js"></script>
+        <script src="/client/lib/angular/angular.min.js"></script>
         <script src="/client/lib/angular-mocks/angular-mocks.js"></script>
         <script src="/client/lib/angular-resource/angular-resource.js"></script>
+        <script src="/client/lib/angular-resource/angular-resource.min.js"></script>
         <script src="/client/lib/angular-route/angular-route.js"></script>
+        <script src="/client/lib/angular-route/angular-route.min.js"></script>
+        <script src="/client/lib/sprintf/angular-sprintf.min.js"></script>
     </div>
 
     <script src="/app/app.js"></script>
 
     <div id="data-bundle-app">
         <script src="/client/app/index.controller.js"></script>
-        <script src="/client/app/home/home.controller.js"></script>
-        <script src="/client/app/petitioners/petitioners.controller.js"></script>
+        <script src="/client/app/post/post.controller.js"></script>
     </div>
 </body>
 

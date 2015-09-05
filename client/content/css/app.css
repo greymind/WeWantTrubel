@@ -2,7 +2,8 @@ body {
     /*padding-top: 50px;*/
     padding-bottom: 20px;
     overflow-y: scroll;
-    /*background-color: rgb(242, 242, 242);*/
+    background-color: rgb(0,0,0);
+    color: rgb(255, 255, 255);
     
     font-family: wf_segoe-ui_normal, 'Segoe UI', Segoe, 'Segoe WP', Tahoma, Verdana, Arial, sans-serif;
     font-size: 16px;
@@ -29,3 +30,72 @@ textarea {
 .trubel-image{
     text-align: center;
 }
+
+.g-recaptcha {
+    margin: auto;
+    width: 304px;
+}
+
+.petitioners {
+    margin: auto;
+    text-align: center;
+    margin-top: 20px;
+    width: 500px;
+}
+
+    .petitioners-block
+    {
+        background-color: #333;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        padding: 5px;
+        min-height: 70px
+    }
+    
+    .petitioners-name
+    {
+        float: left;
+        width: 200px;
+        margin-top: 5px;
+        margin-left: 20px;
+        text-align: left
+    }
+    
+    .petitioners-location
+    {
+        font-size: smaller
+    }
+    
+    .petitioners-slot
+    {
+        font-size: smaller;
+        float: right;
+        width: 100px;
+        margin-top: 15px
+    }
+    
+    .petitioners-timestamp
+    {
+        font-size: smaller;
+        float: right;
+        width: 150px;
+        margin-top: 15px
+    }
+
+.formDiv {
+    width: 500px;
+    margin: auto;
+    text-align: center;
+}
+
+    .formDiv table td:first-child {
+        text-align: right;
+    }
+
+    .formDiv label {
+        margin-right: 0px;
+    }
+
+    .formDiv table td {
+        padding-bottom: 5px;
+    }
