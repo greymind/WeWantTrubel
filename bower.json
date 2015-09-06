@@ -16,6 +16,7 @@
     "angular-resource": "~1.4.3"
   },
   "dependencies": {
+    "angular-recaptcha": "~2.2.5",
     "moment": "~2.10.6",
     "sprintf": "~1.0.3"
   }

@@ -28,7 +28,8 @@ gulp.task('Copy:Lib', ['Clean:Lib'], function (cb) {
         "angular": "angular/angular*.{js,map}",
         "angular-mocks": "angular-mocks/angular-mocks.js",
         "angular-resource": "angular-resource/angular-resource*.{js,map}",
-        "angular-route": "angular-route/angular-route*.{js,map}"
+        "angular-route": "angular-route/angular-route*.{js,map}",
+        "angular-recaptcha": "angular-recaptcha/release/angular-recaptcha.min.js"
     };
 
     var bowerPaths = {};

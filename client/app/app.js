@@ -12,18 +12,18 @@
         'WeWantTrubelDirectives',
         'WeWantTrubelFilters',
         
-        // 3rd Party Modules
-        
+    // 3rd Party Modules
+        'vcRecaptcha'
     ]);
-    
+
     angular.module('WeWantTrubelModules', []);
     angular.module('WeWantTrubelControllers', []);
     angular.module('WeWantTrubelFactories', []);
     angular.module('WeWantTrubelDirectives', []);
     angular.module('WeWantTrubelFilters', []);
-    
+
     ConfigFunction.$inject = ['$routeProvider', '$httpProvider', '$locationProvider'];
-    
+
     function ConfigFunction($routeProvider, $httpProvider, $locationProvider) {
         $routeProvider
             .when('/petition', {
@@ -38,5 +38,5 @@
     }
 
     WeWantTrubelApp.config(ConfigFunction);
-    
+
 })();

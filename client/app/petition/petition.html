@@ -1,5 +1,62 @@
+<script src="https://www.google.com/recaptcha/api.js?onload=vcRecaptchaApiLoaded&render=explicit" async defer></script>
+
 <div ng-controller="Petition">
-    <div class="jumbotron">
-        <h1>{{Title}}</h1>
-    </div>
+    <form name="PetitionForm" novalidate class="petition-form">
+        <table style="margin: auto">
+            <tr>
+                <td>
+                    <label for="name">Name</label>
+                    <div style="font-size: 8px">REQUIRED</div>
+                </td>
+                <td>
+                    <input id="name" type="text" size="25" ng-model="Petition.Name" minlength="2" required />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="email">Email</label>
+                    <div style="font-size: 8px">OPTIONAL</div>
+                </td>
+                <td>
+                    <input id="email" type="email" size="25" ng-model="Petition.Email" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="location">Location</label>
+                    <div style="font-size: 8px">REQUIRED</div>
+                </td>
+                <td>
+                    <input id="location" type="text" size="25" ng-model="Petition.Location" required />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <div vc-recaptcha key="Recaptcha.Key"
+                        on-create="Recaptcha.OnCreate(widgetId)"
+                        on-success="Recaptcha.OnSuccess(response)"
+                        on-expire="Recaptcha.OnExpire()"></div>
+                </td>
+            </tr>
+
+            <!--<tr>
+            <td colspan="2">
+                <div id="ValidationErrorDiv">Error validating captcha. Please check and re-submit.</div>
+            </td>
+        </tr>-->
+
+            <tr>
+                <td colspan="2" style="text-align: center">
+                    <input id="notify" ng-model="Petition.Notify" type="checkbox" />
+                    <label for="notify">Notify me on updates!</label>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: center">
+                    <input type="submit" value="Sign the petition!" ng-click="Submit(Petition)" />
+                </td>
+            </tr>
+        </table>
+    </form>
+    <pre>Petition = {{Petition | json}}</pre>
 </div>
