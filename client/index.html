@@ -14,9 +14,21 @@
 <body ng-cloak>
 
     <div class="container trubel-image">
-        <a href="/">
-            <img id="Image" src="/client/content/images/Trubel.png" alt="#WeWantTrubel">
-        </a>
+        <img id="Image" src="/client/content/images/Trubel.png" alt="#WeWantTrubel">
+    </div>
+
+    <div class="container">
+        <div style="margin-left: 20px; margin-top: 0px; margin-right: 20px; margin-bottom: 0px; font-family: &apos;Calibri&apos;">
+            <div style="float:left; font-size: 96px; font-family: Calibri">{{Level}}</div>
+            <div style="float:right; background-color: #333; width: 88.5%; height: 25px; border-radius: 2px; margin-top: 39px;">
+                <div style="background-color: #fff; width: {{ProgressPercentage}}; height: 25px; border-radius: 2px"></div>
+                <div style="">
+                    <div style="float: left; font-size: 22px; font-family: Candara">PETITION LEVEL</div>
+                    <div style="float: right; font-size: 20px;">{{Petitioners.length}}/{{LevelMax}}</div>
+                </div>
+            </div>
+            <div style="clear: both"></div>
+        </div>
     </div>
 
     <div class="container body-container" ng-view=""></div>
@@ -34,6 +46,7 @@
 
     <div id="data-copy-lib">
         <script src="/client/lib/lodash/lodash.js"></script>
+        <script src="/client/lib/sprintf/sprintf.min.js"></script>
         <script src="/client/lib/moment/moment.js"></script>
         <script src="/client/lib/jquery/jquery.js"></script>
         <script src="/client/lib/jquery/jquery.min.js"></script>
@@ -50,7 +63,6 @@
         <script src="/client/lib/angular-resource/angular-resource.min.js"></script>
         <script src="/client/lib/angular-route/angular-route.js"></script>
         <script src="/client/lib/angular-route/angular-route.min.js"></script>
-        <script src="/client/lib/sprintf/angular-sprintf.min.js"></script>
     </div>
 
     <script src="/client/app/app.js"></script>
