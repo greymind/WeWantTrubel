@@ -5,9 +5,9 @@
         .module('WeWantTrubelControllers')
         .controller('Petition', PetitionController);
 
-    PetitionController.$inject = ['$scope', 'vcRecaptchaService'];
+    PetitionController.$inject = ['$scope', '$http', 'vcRecaptchaService'];
 
-    function PetitionController($scope, vcRecaptchaService) {
+    function PetitionController($scope, $http, vcRecaptchaService) {
         $scope.Title = 'Petition';
         $scope.Recaptcha = {}
         $scope.Recaptcha.Key = '6LflTgETAAAAAHP6FX7dICLE6Qei7sMFfXp66hCM';
@@ -26,6 +26,8 @@
 
         $scope.Submit = function (petition) {
             var valid = false;
+
+            $http.post('api/petitioners', petition);
 
             if (valid) {
                 // Mongo

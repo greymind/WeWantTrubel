@@ -1,6 +1,8 @@
 var express = require('express'),
 	fs = require('fs'),
+	bodyParser = require('body-parser'),
 	petitioners = require('./api/petitioners.js');
+
 var app = express();
 
 if (process.env.RunningOnIISNode == "True") {
@@ -19,6 +21,9 @@ else {
 
 	app.use('/', express.static('../client'));
 }
+
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 // Petitioners API
 app.get('/api/petitioners', petitioners.GetAll);

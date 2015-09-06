@@ -34,5 +34,5 @@ module.exports.Post = function (req, res) {
 		res.end(403, 'Forbidden');
 	};
 
-
+	console.dir(req.body);
 };
