@@ -11,6 +11,8 @@ body {
     font-style: normal;
     font-variant: normal;
     font-weight: normal;
+    
+    text-align: center;
 }
 
 /* Wrapping element */
@@ -25,6 +27,7 @@ input,
 select,
 textarea {
     max-width: 280px;
+    color: rgb(0,0,0);
 }
 
 .trubel-image{
@@ -33,7 +36,7 @@ textarea {
 
 .g-recaptcha {
     margin: auto;
-    width: 304px;
+    /*width: 304px;*/
 }
 
 .petitioners {
@@ -82,20 +85,23 @@ textarea {
         margin-top: 20px;
     }
 
-.formDiv {
+.petition-form {
     width: 500px;
     margin: auto;
     text-align: center;
 }
 
-    .formDiv table td:first-child {
+    .petition-form table td:first-child {
         text-align: right;
+        padding-right: 10px;
     }
 
-    .formDiv label {
+    .petition-form label {
         margin-right: 0px;
+        margin-bottom: 0px;
+        padding-bottom: 0px;
     }
 
-    .formDiv table td {
-        padding-bottom: 5px;
+    .petition-form table td {
+        padding-bottom: 10px;
     }

@@ -32,7 +32,8 @@
             </tr>
             <tr>
                 <td colspan="2">
-                    <div vc-recaptcha key="Recaptcha.Key"
+                    <div class="g-recaptcha"
+                        vc-recaptcha key="Recaptcha.Key"
                         on-create="Recaptcha.OnCreate(widgetId)"
                         on-success="Recaptcha.OnSuccess(response)"
                         on-expire="Recaptcha.OnExpire()"></div>
@@ -58,5 +59,4 @@
             </tr>
         </table>
     </form>
-    <pre>Petition = {{Petition | json}}</pre>
 </div>
