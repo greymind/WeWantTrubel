@@ -29,26 +29,18 @@
         };
 
         $scope.Submit = function (petition) {
-            $http.post('/api/petitioners', petition)
-                .success(function (result) {
-                    $location.path('/share');
-                    $scope.$emit('GetAllPetitioners');
-                })
-                .error(function (data, status) {
-                    alert(data);
-                });
-
-            return;
-
             $http.get(sprintf('/api/g-recaptcha/%s', $scope.Recaptcha.Response))
                 .success(function (data) {
                     if (data.success) {
                         console.log('SUCCESS!');
 
                         $http.post('/api/petitioners', petition)
-                            .success(function () {
-                                console.log('Success post!');
+                            .success(function (result) {
                                 $location.path('/share');
+                                $scope.$emit('GetAllPetitioners');
+                            })
+                            .error(function (data, status) {
+                                vcRecaptchaService.reload($scope.Recaptcha.WidgetId);
                             });
                     }
                     else {
