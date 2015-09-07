@@ -16,23 +16,25 @@ var Allowed = function (req) {
 
 module.exports.GetAll = function (req, res) {
 	if (!Allowed(req)) {
-		res.end(403, 'Forbidden');
+		res.send(403);
 	};
 
 	Client.connect(uri, function (err, db) {
-		db.collection('WeWantTrubel-Petitioners')
-			.find({}, { "Name": 1, "Location": 1, "TimeStamp": 1 })
-			.sort({ "TimeStamp": -1 })
-			.toArray(function (err, docs) {
-				res.send(docs);
-			});
+		res.send(nconf.get('petitioners'));
+		// db.collection('WeWantTrubel-Petitioners')
+		// 	.find({}, { "Name": 1, "Location": 1, "TimeStamp": 1 })
+		// 	.sort({ "TimeStamp": -1 })
+		// 	.toArray(function (err, docs) {
+		// 		res.send(docs);
+		// 	});
 	});
 };
 
 module.exports.Post = function (req, res) {
 	if (!Allowed(req)) {
-		res.end(403, 'Forbidden');
+		res.send(403);
 	};
 
 	console.dir(req.body);
+	res.send(201);
 };
