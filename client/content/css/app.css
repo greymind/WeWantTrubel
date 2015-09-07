@@ -86,7 +86,7 @@ textarea {
     text-align: center;
 }
 
-    .petition-form table td:first-child:not([colspan=2]) {
+    .petition-form table td:first-child {
         text-align: right;
         padding-right: 10px;
     }
@@ -101,17 +101,46 @@ textarea {
         padding-bottom: 10px;
     }
     
-.petition-form .custom-error {
-    color:rgb(255,0,0);
-    font-size: 14px;
+    .petition-form .custom-error {
+        color:rgb(255,0,0);
+        font-size: 14px;
+        font-style: italic;
+        font-variant: small-caps;
+        text-align: right;
+    }
+
+    .petition-form .field-hint {
+        font-size: 8px;
+    }
+
+    .petition-form .td-recaptcha {
+        text-align: center !important;
+        padding-right: 0px !important;
+    }
+    
+    .petition-form .recaptcha {
+        padding-left: 20px !important;
+    }
+
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color: gray;
+    font-size: 12px;
     font-style: italic;
-    font-variant: small-caps;
 }
-
-.petition-form .field-hint {
-    font-size: 8px;
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color: gray;
+   opacity: 1;
+   font-size: 12px;
+   font-style: italic;
 }
-
-.petition-form .recaptcha {
-    text-align: center;
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color: gray;
+   opacity: 1;
+   font-size: 12px;
+   font-style: italic;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color: gray;
+   font-size: 12px;
+   font-style: italic;
 }

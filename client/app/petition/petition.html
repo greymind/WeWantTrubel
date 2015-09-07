@@ -37,7 +37,7 @@
                 </td>
             </tr>
             <tr>
-                <td colspan="2">
+                <td colspan="2" class="td-recaptcha">
                     <div id="recaptcha" class="recaptcha" vc-recaptcha key="Recaptcha.Key" on-create="Recaptcha.OnCreate(widgetId)" on-success="Recaptcha.OnSuccess(response)"
                     on-expire="Recaptcha.OnExpire()"></div>
                     <div class="custom-error" ng-show="PetitionForm.$dirty && Recaptcha.HasNoResponse()">captcha error</div>
@@ -51,7 +51,8 @@
             </tr>
             <tr>
                 <td colspan="2" style="text-align: center">
-                    <input type="submit" value="Sign the petition!" ng-click="Submit(Petition)" ng-disabled="PetitionForm.$invalid" />
+                    <input type="submit" class="btn" value="Sign the petition!" ng-click="Submit(Petition)" ng-disabled="PetitionForm.$invalid"
+                    />
                 </td>
             </tr>
         </table>
