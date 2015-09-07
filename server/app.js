@@ -1,7 +1,8 @@
 var express = require('express'),
 	fs = require('fs'),
 	bodyParser = require('body-parser'),
-	petitioners = require('./api/petitioners.js');
+	petitioners = require('./api/petitioners.js'),
+	gRecaptcha = require('./api/g-recaptcha.js');
 
 var app = express();
 
@@ -28,6 +29,9 @@ app.use(bodyParser.json());
 // Petitioners API
 app.get('/api/petitioners', petitioners.GetAll);
 app.post('/api/petitioners', petitioners.Post);
+
+// Recaptcha
+app.get('/api/g-recaptcha/:response', gRecaptcha.Get);
 
 app.use(function (err, req, res, next) {
 	console.error(err.stack);
