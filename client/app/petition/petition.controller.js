@@ -31,7 +31,7 @@
                     $scope.$emit('GetAllPetitioners');
                 })
                 .error(function (data, status) {
-                    alert(status);
+                    alert(data);
                 });
 
             return;

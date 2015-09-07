@@ -32,11 +32,8 @@
             </tr>
             <tr>
                 <td colspan="2">
-                    <div class="g-recaptcha"
-                        vc-recaptcha key="Recaptcha.Key"
-                        on-create="Recaptcha.OnCreate(widgetId)"
-                        on-success="Recaptcha.OnSuccess(response)"
-                        on-expire="Recaptcha.OnExpire()"></div>
+                    <div class="g-recaptcha" vc-recaptcha key="Recaptcha.Key" on-create="Recaptcha.OnCreate(widgetId)" on-success="Recaptcha.OnSuccess(response)"
+                    on-expire="Recaptcha.OnExpire()"></div>
                 </td>
             </tr>
 
@@ -54,7 +51,7 @@
             </tr>
             <tr>
                 <td colspan="2" style="text-align: center">
-                    <input type="submit" value="Sign the petition!" ng-click="Submit(Petition)" />
+                    <input type="submit" value="Sign the petition!" ng-click="Submit(Petition)" ng-disabled="PetitionForm.$invalid" />
                 </td>
             </tr>
         </table>
