@@ -25,12 +25,13 @@
         };
 
         $scope.Submit = function (petition) {
-            //$http.post('/api/g-recaptcha', { response: $scope.Recaptcha.Response });
-            
             $http.post('/api/petitioners', petition)
-                .success(function () {
+                .success(function (result) {
                     $location.path('/share');
                     $scope.$emit('GetAllPetitioners');
+                })
+                .error(function (data, status) {
+                    alert(status);
                 });
 
             return;
