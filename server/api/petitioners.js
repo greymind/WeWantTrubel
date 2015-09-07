@@ -16,7 +16,7 @@ var Allowed = function (req) {
 	return allow || req.hostname === 'greymind-dev.azurewebsites.net';
 }
 
-var _configMode = true;
+var _configMode = nconf.get('config-mode');
 
 module.exports.GetAll = function (req, res) {
 	if (!Allowed(req)) {
