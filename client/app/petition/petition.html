@@ -40,7 +40,7 @@
                 <td colspan="2">
                     <div id="recaptcha" class="recaptcha" vc-recaptcha key="Recaptcha.Key" on-create="Recaptcha.OnCreate(widgetId)" on-success="Recaptcha.OnSuccess(response)"
                     on-expire="Recaptcha.OnExpire()"></div>
-                    <div class="custom-error" ng-show="PetitionForm.$dirty && Recaptcha.HasNoResponse()">invalid captcha</div>
+                    <div class="custom-error" ng-show="PetitionForm.$dirty && Recaptcha.HasNoResponse()">captcha error</div>
                 </td>
             </tr>
             <tr>

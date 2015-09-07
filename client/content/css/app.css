@@ -86,7 +86,7 @@ textarea {
     text-align: center;
 }
 
-    .petition-form table td:first-child {
+    .petition-form table td:first-child:not([colspan=2]) {
         text-align: right;
         padding-right: 10px;
     }
@@ -113,5 +113,5 @@ textarea {
 }
 
 .petition-form .recaptcha {
-    text-align: center;   
+    text-align: center;
 }
