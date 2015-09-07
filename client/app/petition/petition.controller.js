@@ -24,6 +24,10 @@
             $scope.Recaptcha.Response = null;
         };
 
+        $scope.Recaptcha.HasNoResponse = function () {
+            return !$scope.Recaptcha.Response;
+        };
+
         $scope.Submit = function (petition) {
             $http.post('/api/petitioners', petition)
                 .success(function (result) {

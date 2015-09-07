@@ -34,11 +34,6 @@ textarea {
     text-align: center;
 }
 
-.g-recaptcha {
-    margin: auto;
-    /*width: 304px;*/
-}
-
 .petitioners {
     margin: auto;
     text-align: center;
@@ -105,3 +100,18 @@ textarea {
     .petition-form table td {
         padding-bottom: 10px;
     }
+    
+.petition-form .custom-error {
+    color:rgb(255,0,0);
+    font-size: 14px;
+    font-style: italic;
+    font-variant: small-caps;
+}
+
+.petition-form .field-hint {
+    font-size: 8px;
+}
+
+.petition-form .recaptcha {
+    text-align: center;   
+}

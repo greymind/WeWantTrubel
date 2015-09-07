@@ -6,46 +6,46 @@
             <tr>
                 <td>
                     <label for="name">Name</label>
-                    <div style="font-size: 8px">REQUIRED</div>
+                    <div class="field-hint">REQUIRED</div>
                 </td>
                 <td>
-                    <input id="name" type="text" size="25" ng-model="Petition.Name" minlength="2" required />
+                    <input id="name" name="name" type="text" size="25" placeholder="Your full name (eg: John Doe)" ng-model="Petition.Name" ng-minlength="2"
+                    ng-required="true" />
+                    <div class="custom-error" ng-show="PetitionForm.name.$dirty && PetitionForm.name.$invalid">please enter a valid name</div>
                 </td>
             </tr>
             <tr>
                 <td>
                     <label for="email">Email</label>
-                    <div style="font-size: 8px">OPTIONAL</div>
+                    <div class="field-hint">OPTIONAL</div>
                 </td>
                 <td>
-                    <input id="email" type="email" size="25" ng-model="Petition.Email" />
+                    <input id="email" name="email" type="email" size="25" placeholder="Your email (eg: me@domain.com)" ng-model="Petition.Email"
+                    />
+                    <div class="custom-error" ng-show="PetitionForm.email.$dirty && PetitionForm.email.$invalid">please enter a valid email</div>
                 </td>
             </tr>
             <tr>
                 <td>
                     <label for="location">Location</label>
-                    <div style="font-size: 8px">REQUIRED</div>
+                    <div class="field-hint">REQUIRED</div>
                 </td>
                 <td>
-                    <input id="location" type="text" size="25" ng-model="Petition.Location" required />
+                    <input id="location" name="location" type="text" size="25" placeholder="Your location (eg: Los Angeles)" ng-model="Petition.Location"
+                    ng-minlength="2" ng-required="true" />
+                    <div class="custom-error" ng-show="PetitionForm.location.$dirty && PetitionForm.location.$invalid">please enter a valid location</div>
                 </td>
             </tr>
             <tr>
                 <td colspan="2">
-                    <div class="g-recaptcha" vc-recaptcha key="Recaptcha.Key" on-create="Recaptcha.OnCreate(widgetId)" on-success="Recaptcha.OnSuccess(response)"
+                    <div id="recaptcha" class="recaptcha" vc-recaptcha key="Recaptcha.Key" on-create="Recaptcha.OnCreate(widgetId)" on-success="Recaptcha.OnSuccess(response)"
                     on-expire="Recaptcha.OnExpire()"></div>
+                    <div class="custom-error" ng-show="PetitionForm.$dirty && Recaptcha.HasNoResponse()">invalid captcha</div>
                 </td>
             </tr>
-
-            <!--<tr>
-            <td colspan="2">
-                <div id="ValidationErrorDiv">Error validating captcha. Please check and re-submit.</div>
-            </td>
-        </tr>-->
-
             <tr>
                 <td colspan="2" style="text-align: center">
-                    <input id="notify" ng-model="Petition.Notify" type="checkbox" />
+                    <input id="notify" name="notify" ng-model="Petition.Notify" type="checkbox" />
                     <label for="notify">Notify me on updates!</label>
                 </td>
             </tr>
