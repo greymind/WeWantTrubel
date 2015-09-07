@@ -1,0 +1,14 @@
+<div ng-controller="Share">
+    <div id="Twitter" style="margin-bottom: 30px">
+        <div style="font-family: Candara; font-size: 28px; margin-bottom: 10px">Tell the world!</div>
+        <div style="transform: scale(1.25)">
+            <a class="twitter-share-button" href="https://twitter.com/share" data-dnt="true" data-url="{{Url}}" data-hashtags="{{Hashtags}}"
+            data-text="{{Text}}" data-size="large" data-count="none">
+                    Tweet
+                </a>
+        </div>
+        <script>
+            window.twttr = (function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], t = window.twttr || {}; if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; js.src = "https://platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs); t._e = []; t.ready = function (f) { t._e.push(f); }; return t; }(document, "script", "twitter-wjs"));
+        </script>
+    </div>
+</div>

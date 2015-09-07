@@ -29,6 +29,9 @@
             .when('/petition', {
                 templateUrl: 'app/petition/petition.html'
             })
+            .when('/share', {
+                templateUrl: 'app/share/share.html'
+            })
             .otherwise({
                 redirectTo: '/petition'
             });
