@@ -5,9 +5,9 @@
         .module('WeWantTrubelControllers')
         .controller('Petition', PetitionController);
 
-    PetitionController.$inject = ['$scope', '$http', 'vcRecaptchaService'];
+    PetitionController.$inject = ['$scope', '$http', '$location', 'vcRecaptchaService'];
 
-    function PetitionController($scope, $http, vcRecaptchaService) {
+    function PetitionController($scope, $http, $location, vcRecaptchaService) {
         $scope.Title = 'Petition';
         $scope.Recaptcha = {}
         $scope.Recaptcha.Key = '6LflTgETAAAAAHP6FX7dICLE6Qei7sMFfXp66hCM';
@@ -25,16 +25,31 @@
         };
 
         $scope.Submit = function (petition) {
-            var valid = false;
+            //$http.post('/api/g-recaptcha', { response: $scope.Recaptcha.Response });
+            
+            $http.post('/api/petitioners', petition)
+                .success(function () {
+                    $location.path('/share');
+                    $scope.$emit('GetAllPetitioners');
+                });
 
-            $http.post('api/petitioners', petition);
+            return;
 
-            if (valid) {
-                // Mongo
-            }
-            else {
-                vcRecaptchaService.reload($scope.Recaptcha.WidgetId);
-            }
+            $http.get(sprintf('/api/g-recaptcha/%s', $scope.Recaptcha.Response))
+                .success(function (data) {
+                    if (data.success) {
+                        console.log('SUCCESS!');
+
+                        $http.post('/api/petitioners', petition)
+                            .success(function () {
+                                console.log('Success post!');
+                                $location.path('/share');
+                            });
+                    }
+                    else {
+                        vcRecaptchaService.reload($scope.Recaptcha.WidgetId);
+                    }
+                });
         };
     }
 })();
