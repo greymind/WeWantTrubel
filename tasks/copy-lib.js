@@ -21,8 +21,6 @@ gulp.task('Copy:Lib', ['Clean:Lib'], function (cb) {
         "sprintf": "sprintf/dist/sprintf.min.js",
         "moment": "moment/moment.js",
         "jquery": "jquery/dist/jquery*.{js,map}",
-        "jquery-validation": "jquery-validation/dist/jquery.validate.js",
-        "jquery-validation-unobtrusive": "jquery-validation-unobtrusive/jquery.validate.unobtrusive.js",
         "bootstrap": "bootstrap/dist/**/*.{js,map,css,ttf,svg,woff,woff2,eot}",
         "hammer.js": "hammer.js/hammer*.{js,map}",
         "angular": "angular/angular*.{js,map}",

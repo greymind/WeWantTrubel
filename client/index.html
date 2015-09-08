@@ -19,12 +19,12 @@
 
     <div class="container">
         <div style="margin-left: 20px; margin-top: 0px; margin-right: 20px; margin-bottom: 0px; font-family: &apos;Calibri&apos;">
-            <div style="float:left; font-size: 96px; font-family: Calibri">{{Level}}</div>
+            <div style="float:left; font-size: 96px; font-family: Calibri" ng-bind="Level"></div>
             <div style="float:right; background-color: #333; width: 88.5%; height: 25px; border-radius: 2px; margin-top: 39px;">
                 <div style="background-color: #fff; width: {{ProgressPercentage}}; height: 25px; border-radius: 2px"></div>
                 <div style="">
                     <div style="float: left; font-size: 22px; font-family: Candara">PETITION LEVEL</div>
-                    <div style="float: right; font-size: 20px;">{{Petitioners.length}}/{{LevelMax}}</div>
+                    <div style="float: right; font-size: 20px;"><span ng-bind="Petitioners.length"></span>/<span ng-bind="LevelMax"></span></div>
                 </div>
             </div>
             <div style="clear: both"></div>
@@ -36,11 +36,11 @@
     <div class="petitioners">
         <div class="petitioners-block" ng-repeat="petitioner in Petitioners">
             <div class="petitioners-name">
-                <div>{{petitioner.Name}}</div>
-                <div class="petitioners-location">{{petitioner.Location}}</div>
+                <div ng-bind="petitioner.Name"></div>
+                <div class="petitioners-location" ng-bind="petitioner.Location"></div>
             </div>
-            <div class="petitioners-slot">#{{Petitioners.length - $index}}</div>
-            <div class="petitioners-timestamp">{{FormatTimeStamp(petitioner.TimeStamp)}}</div>
+            <div class="petitioners-slot">#<span ng-bind="Petitioners.length - $index"></div>
+            <div class="petitioners-timestamp" ng-bind="FormatTimeStamp(petitioner.TimeStamp)"></div>
         </div>
     </div>
 
@@ -48,20 +48,12 @@
         <script src="/client/lib/lodash/lodash.js"></script>
         <script src="/client/lib/sprintf/sprintf.min.js"></script>
         <script src="/client/lib/moment/moment.js"></script>
-        <script src="/client/lib/jquery/jquery.js"></script>
         <script src="/client/lib/jquery/jquery.min.js"></script>
-        <script src="/client/lib/jquery-validation/jquery.validate.js"></script>
-        <script src="/client/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
-        <script src="/client/lib/bootstrap/js/bootstrap.js"></script>
         <script src="/client/lib/bootstrap/js/bootstrap.min.js"></script>
-        <script src="/client/lib/hammer.js/hammer.js"></script>
         <script src="/client/lib/hammer.js/hammer.min.js"></script>
-        <script src="/client/lib/angular/angular.js"></script>
         <script src="/client/lib/angular/angular.min.js"></script>
         <script src="/client/lib/angular-mocks/angular-mocks.js"></script>
-        <script src="/client/lib/angular-resource/angular-resource.js"></script>
         <script src="/client/lib/angular-resource/angular-resource.min.js"></script>
-        <script src="/client/lib/angular-route/angular-route.js"></script>
         <script src="/client/lib/angular-route/angular-route.min.js"></script>
         <script src="/client/lib/angular-recaptcha/angular-recaptcha.min.js"></script>
     </div>
