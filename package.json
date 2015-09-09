@@ -5,6 +5,7 @@
   "main": "server/app.js",
   "private": true,
   "dependencies": {
+    "lodash": "^3.10.1",
     "body-parser": "^1.13.3",
     "express": "^4.13.3",
     "moment": "^2.10.6",
