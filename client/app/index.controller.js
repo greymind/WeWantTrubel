@@ -43,7 +43,7 @@
         $scope.FormatTimeStamp = function (timeStamp) {
             return moment(timeStamp).format("MMM DD, HH:mm");
         }
-        
+
         GetAllPetitioners();
     }
 })();
