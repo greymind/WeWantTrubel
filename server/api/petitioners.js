@@ -25,6 +25,7 @@ module.exports.GetAll = function (req, res) {
 
 	Client.connect(uri, function (err, db) {
 		if (_configMode) {
+			nconf.load();
 			res.send(nconf.get('petitioners'));
 		}
 		else {
@@ -33,6 +34,7 @@ module.exports.GetAll = function (req, res) {
 				.sort({ "TimeStamp": -1 })
 				.toArray(function (err, docs) {
 					nconf.set('petitioners', docs);
+					nconf.save();
 					res.send(docs);
 				});
 		}
@@ -65,6 +67,7 @@ module.exports.Post = function (req, res) {
 			var petitioners = nconf.get('petitioners');
 			petitioners.unshift(petition);
 			nconf.set('petitioners', petitioners);
+			nconf.save();
 			res.sendStatus(201);
 		}
 		else {
