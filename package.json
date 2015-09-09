@@ -1,6 +1,6 @@
 {
   "name": "we-want-trubel",
-  "version": "0.4.3",
+  "version": "0.4.4",
   "description": "WeWantTrubel project",
   "main": "server/app.js",
   "private": true,
