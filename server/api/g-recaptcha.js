@@ -2,7 +2,7 @@ var nconf = require('nconf'),
 	sprintf = require('sprintf-js').sprintf,
 	https = require('https');
 
-nconf.env(['mongodb:connection'])
+nconf.env(['mongodb:connection', 'g-recaptcha:secret'])
 	.file('api/config.json');
 
 var allow = !nconf.get('RunningOnIISNode');
