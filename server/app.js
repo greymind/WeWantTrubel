@@ -1,6 +1,7 @@
 var express = require('express'),
 	fs = require('fs'),
 	bodyParser = require('body-parser'),
+	monitoring = require('./api/monitoring.js'),
 	petitioners = require('./api/petitioners.js'),
 	gRecaptcha = require('./api/g-recaptcha.js');
 
@@ -25,6 +26,9 @@ else {
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+
+// Monitoring and keep-alive
+app.get('/api/monitoring', monitoring.Get);
 
 // Petitioners API
 app.get('/api/petitioners', petitioners.GetAll);
