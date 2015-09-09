@@ -34,6 +34,24 @@ textarea {
     text-align: center;
 }
 
+.embed-container {
+    position: relative;
+    height: 0;
+    overflow: hidden;
+    background-color:black;
+}
+
+.ratio-10-11 {
+    padding-bottom: 1100px;
+}
+
+embed-container img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width:100%;
+}
+
 .petitioners {
     margin: auto;
     text-align: center;
