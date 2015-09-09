@@ -29,11 +29,9 @@
         };
 
         $scope.Submit = function (petition) {
-            $http.get(sprintf('/api/g-recaptcha/%s', $scope.Recaptcha.Response))
+            $http.get('/api/g-recaptcha', { params: { response: $scope.Recaptcha.Response } })
                 .success(function (data) {
                     if (data.success) {
-                        console.log('SUCCESS!');
-
                         $http.post('/api/petitioners', petition)
                             .success(function (result) {
                                 $location.path('/share');
@@ -46,6 +44,8 @@
                     else {
                         vcRecaptchaService.reload($scope.Recaptcha.WidgetId);
                     }
+                }).error(function (data, status) {
+                    vcRecaptchaService.reload($scope.Recaptcha.WidgetId);
                 });
         };
     }

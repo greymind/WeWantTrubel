@@ -35,7 +35,7 @@ app.get('/api/petitioners', petitioners.GetAll);
 app.post('/api/petitioners', petitioners.Post);
 
 // Recaptcha
-app.get('/api/g-recaptcha/:response', gRecaptcha.Get);
+app.get('/api/g-recaptcha', gRecaptcha.Get);
 
 app.use(function (err, req, res, next) {
 	console.error(err.stack);

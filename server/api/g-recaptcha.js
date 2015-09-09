@@ -15,14 +15,14 @@ module.exports.Get = function (req, res) {
 	if (!Allowed(req)) {
 		res.end(403, 'Forbidden');
 	};
-
+	
 	var options = {
 		host: 'www.google.com',
 		port: 443,
-		path: sprintf('/recaptcha/api/siteverify?secret=%s&response=%s', nconf.get('g-recaptcha:secret'), req.params.response),
+		path: sprintf('/recaptcha/api/siteverify?secret=%s&response=%s', nconf.get('g-recaptcha:secret'), req.query.response),
 		method: 'POST'
 	};
-
+	
 	https.request(options, function (response) {
 		var data = '';
 		response.on('data', function (chunk) {
