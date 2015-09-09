@@ -28,7 +28,14 @@
             return !$scope.Recaptcha.Response;
         };
 
+        $scope.Submitting = false;
+        var SubmitError = function () {
+            vcRecaptchaService.reload($scope.Recaptcha.WidgetId);
+            $scope.Submitting = false;
+        };
+
         $scope.Submit = function (petition) {
+            $scope.Submitting = true;
             $http.get('/api/g-recaptcha', { params: { response: $scope.Recaptcha.Response } })
                 .success(function (data) {
                     if (data.success) {
@@ -38,14 +45,14 @@
                                 $scope.$emit('GetAllPetitioners');
                             })
                             .error(function (data, status) {
-                                vcRecaptchaService.reload($scope.Recaptcha.WidgetId);
+                                SubmitError();
                             });
                     }
                     else {
-                        vcRecaptchaService.reload($scope.Recaptcha.WidgetId);
+                        SubmitError();
                     }
                 }).error(function (data, status) {
-                    vcRecaptchaService.reload($scope.Recaptcha.WidgetId);
+                    SubmitError();
                 });
         };
     }
