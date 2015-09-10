@@ -1,8 +1,11 @@
 {
   "name": "we-want-trubel",
   "version": "0.5.0",
-  "description": "WeWantTrubel project",
+  "description": "A fan site to petition for the reinstatement of Trubel to Grimm! #WeWantTrubel",
   "main": "server/app.js",
+  "engines": {
+    "node": "0.12.x"
+  },
   "private": true,
   "dependencies": {
     "body-parser": "^1.13.3",
