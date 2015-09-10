@@ -8,7 +8,7 @@
     // Custom modules
         'WeWantTrubelModules',
         'WeWantTrubelControllers',
-        'WeWantTrubelFactories',
+        'WeWantTrubelServices',
         'WeWantTrubelDirectives',
         'WeWantTrubelFilters',
         
