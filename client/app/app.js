@@ -18,7 +18,7 @@
 
     angular.module('WeWantTrubelModules', []);
     angular.module('WeWantTrubelControllers', []);
-    angular.module('WeWantTrubelFactories', []);
+    angular.module('WeWantTrubelServices', []);
     angular.module('WeWantTrubelDirectives', []);
     angular.module('WeWantTrubelFilters', []);
 
