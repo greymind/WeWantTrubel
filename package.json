@@ -15,7 +15,8 @@
     "moment": "^2.10.6",
     "mongodb": "^2.0.41",
     "nconf": "^0.7.2",
-    "sprintf-js": "^1.0.3"
+    "sprintf-js": "^1.0.3",
+    "forever": "^0.15.1"
   },
   "devDependencies": {
     "bower": "^1.5.2",
@@ -46,7 +47,8 @@
     "tsd": "^0.6.4"
   },
   "scripts": {
-    "start": "cd ./server/ && nodemon -w . ./app.js",
+    "start": "forever ./server/app.js",
+    "test": "nodemon -w . ./server/app.js",
     "postinstall": "bower install && gulp Build"
   },
   "keywords": [

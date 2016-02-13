@@ -7,23 +7,7 @@ var express = require('express'),
 
 var app = express();
 
-if (process.env.RunningOnIISNode == "True") {
-	app.get('/', function (req, res) {
-		fs.readFile('../client/index.html', 'utf8', function (err, text) {
-			res.send(text);
-		});
-	});
-}
-else {
-	// app.use('/client', function (req, res, next) {
-	// 	console.log(req.url);
-	// 	req.url = req.url.split('/client/')
-	// 		.join('/');
-	// 	res.redirect(req.url);
-	// });
-
-	app.use('/', express.static('client'));
-}
+app.use('/', express.static('client'));
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
