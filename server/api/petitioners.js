@@ -6,10 +6,10 @@ var lodash = require('lodash'),
 var Client = mongo.MongoClient,
 	ObjectId = mongo.ObjectID;
 
-nconf.env(['mongodb:connection'])
+nconf.env(['MONGODB_CONNECTION'])
 	.file('api/config.json');
 
-var uri = nconf.get('mongodb:connection');
+var uri = nconf.get('MONGODB_CONNECTION');
 var allow = !nconf.get('RunningOnIISNode');
 
 var Allowed = function (req) {

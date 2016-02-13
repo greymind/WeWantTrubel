@@ -2,7 +2,7 @@ var nconf = require('nconf'),
 	sprintf = require('sprintf-js').sprintf,
 	https = require('https');
 
-nconf.env(['mongodb:connection', 'g-recaptcha:secret'])
+nconf.env(['G_RECAPTCHA_SECRET'])
 	.file('api/config.json');
 
 var allow = !nconf.get('RunningOnIISNode');
@@ -20,7 +20,7 @@ module.exports.Get = function (req, res) {
 	var options = {
 		host: 'www.google.com',
 		port: 443,
-		path: sprintf('/recaptcha/api/siteverify?secret=%s&response=%s', nconf.get('g-recaptcha:secret'), req.query.response),
+		path: sprintf('/recaptcha/api/siteverify?secret=%s&response=%s', nconf.get('G_RECAPTCHA_SECRET'), req.query.response),
 		method: 'POST'
 	};
 	
