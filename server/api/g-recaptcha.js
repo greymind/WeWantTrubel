@@ -3,7 +3,7 @@ var nconf = require('nconf'),
 	https = require('https');
 
 nconf.env(['G_RECAPTCHA_SECRET'])
-	.file('api/config.json');
+	.file('server/api/config.json');
 
 var allow = !nconf.get('RunningOnIISNode');
 

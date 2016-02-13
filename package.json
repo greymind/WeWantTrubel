@@ -47,7 +47,7 @@
     "tsd": "^0.6.4"
   },
   "scripts": {
-    "start": "forever ./server/app.js",
+    "start": "forever start --fifo --minUptime 10000 --spinSleepTime 1000 ./server/app.js",
     "test": "nodemon -w . ./server/app.js",
     "postinstall": "bower install && gulp Build"
   },
