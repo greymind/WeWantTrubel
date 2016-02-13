@@ -1,6 +1,6 @@
 {
   "name": "we-want-trubel",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "description": "A fan site to petition for the reinstatement of Trubel to Grimm! #WeWantTrubel",
   "main": "server/app.js",
   "engines": {
