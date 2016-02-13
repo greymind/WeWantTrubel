@@ -8,7 +8,8 @@ nconf.env(['mongodb:connection', 'g-recaptcha:secret'])
 var allow = !nconf.get('RunningOnIISNode');
 
 var Allowed = function (req) {
-	return allow || req.hostname === 'greymind-dev.azurewebsites.net';
+	return allow || req.hostname === 'greymind-dev.azurewebsites.net' ||
+		req.hostname === 'wewanttrubel.herokuapp.com';
 }
 
 module.exports.Get = function (req, res) {

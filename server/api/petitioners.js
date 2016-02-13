@@ -13,7 +13,8 @@ var uri = nconf.get('mongodb:connection');
 var allow = !nconf.get('RunningOnIISNode');
 
 var Allowed = function (req) {
-	return allow || req.hostname === 'greymind-dev.azurewebsites.net';
+	return allow || req.hostname === 'greymind-dev.azurewebsites.net' ||
+		req.hostname === 'wewanttrubel.herokuapp.com';
 }
 
 var _configMode = nconf.get('config-mode');
